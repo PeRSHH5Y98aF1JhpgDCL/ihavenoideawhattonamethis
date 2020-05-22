@@ -124,7 +124,6 @@ function timeDilation(m,d=0.0000035457303450685) {
 	m=m.root(player.he.add(1).logBase(10).pow(0.5).add(1))
 	//return D(1).sub(D(2).mul(6.67430).div(10**-11).mul(m).div(D(150000000000).add(m.mul(d).mul(4/3*Math.PI))).div(299792458*299792458))
 	var x=D(''+m.pow(D(1).div(D(99).div(m.add(1).logBase(10).add(1).div(100)).add(1))).pow(m.logBase(10).add(1).logBase(10)))
-	(''+x)
 	return x
 }
 function bhd(x) {
