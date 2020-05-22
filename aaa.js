@@ -38,6 +38,7 @@ function tick() {
 		sbd1(D(0.2))
 	}
 	var td1p=(player.dim1.clone()).div(timeDilation(player.h.add(1)))
+	
 	if (player.d1h.gt(td1p)) {
 		player.h=player.h.add(td1p.div(10).mul(2).mul(player.he.add(1).logBase(1.4).add(1)))
 		player.d1h=player.d1h.sub(td1p.div(10))
