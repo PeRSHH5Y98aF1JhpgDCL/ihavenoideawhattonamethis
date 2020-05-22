@@ -137,8 +137,9 @@ function save() {
 	localStorage.setItem("matterGame",JSON.stringify(player))
 }
 function load() {
+	try{
 	player=JSON.parse(localStorage.getItem("matterGame"),reviver)
-}
+}catch(err){}}
 var player={
 	h:D(11),
 	dim1:D(1),
