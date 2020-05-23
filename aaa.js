@@ -33,18 +33,22 @@ function update() {
 	did("starDiv").style.display=player.he.gt(00)?"block":"none"
 	did("hedisp").innerHTML="You have "+player.he+" helium, magically making time dilation treat your matter like root "+player.he.add(1).logBase(10).pow(0.5).add(1)+" less and also multiplies efficiency by "+player.he.add(1).logBase(1.4).add(1)+""
 }
-function tick() {
+function tick(m) {
 	if (player.unasb) {
 		sbd1(D(0.2))
 	}
 	var td1p=(player.dim1.clone()).div(timeDilation(player.h.add(1)))
-	
 	if (player.d1h.gt(td1p)) {
+		temp=player.h.add(td1p.div(10).mul(2).mul(player.he.add(1).logBase(1.4).add(1)))
+	}
+	td1p=(player.dim1.clone()).div(timeDilation(player.h.add(temp).add(1)))
+		if (player.d1h.gt(td1p)) {
 		player.h=player.h.add(td1p.div(10).mul(2).mul(player.he.add(1).logBase(1.4).add(1)))
 		player.d1h=player.d1h.sub(td1p.div(10))
 	}
 		player.d1h=player.d1h.add(player.dim1.mul(0.01))
 	update()
+	setTimeout(tick,50,player)
 }
 function reviver(k,v) {
 	if (v.type=="decimal") {
@@ -122,7 +126,7 @@ function timeDilation(m,d=0.0000035457303450685) {
 	m=D(m)
 	m=m.root(player.he.add(1).logBase(10).pow(0.5).add(1))
 	//return D(1).sub(D(2).mul(6.67430).div(10**-11).mul(m).div(D(150000000000).add(m.mul(d).mul(4/3*Math.PI))).div(299792458*299792458))
-	var x=D(''+m.pow(D(1).div(D(99).div(m.add(1).logBase(10).add(1).div(100)).add(1))).pow(m.logBase(10).add(1).logBase(10)))
+	var x=D(''+m.pow(D(1).div(D(99).div(m.add(1).logBase(10).add(1).div(100)).add(1))).pow(m.logBase(10).logBase(10)))
 	return x
 }
 function bhd(x) {
@@ -135,9 +139,8 @@ function save() {
 	localStorage.setItem("matterGame",JSON.stringify(player))
 }
 function load() {
-	try{
 	player=JSON.parse(localStorage.getItem("matterGame"),reviver)
-}catch(err){}}
+}
 var player={
 	h:D(11),
 	dim1:D(1),
@@ -155,5 +158,5 @@ load()
 //just in case
 Object.assign(replayer,player)
 player=replayer
-setInterval(tick,50)
+setTimeout(tick,50,player)
 setInterval(save,60000)
