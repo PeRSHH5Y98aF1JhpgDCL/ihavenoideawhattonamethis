@@ -51,7 +51,7 @@ function tick(m) {
 	td1p=(player.dim1.clone()).div(timeDilation(player.h.add(temp).add(1)))
 	
 		if (player.d1h.gt(td1p)||player.he.gt("1e100")) {
-		player.h=player.h.add(td1p.div(10).mul(2).mul(player.he.add(1).logBase(1.4).add(1))).mul(player.hep.add(1).pow(0.1))
+		player.h=player.h.add(td1p.div(10).mul(4).mul(player.he.add(1).logBase(1.4).add(1))).mul(player.hep.add(1).pow(0.1))
 		if (!player.he.gt("1e100")) player.d1h=player.d1h.sub(td1p.div(10))
 		if (!player.he.gt("1e100")) player.d1h=player.d1h.sub(td1p.div(10))
 	}
