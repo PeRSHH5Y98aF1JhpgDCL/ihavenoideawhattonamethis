@@ -1,23 +1,43 @@
 <script src="blah.js"></script>
 <script src="aaa.js"></script>
 <style>
-#stellarize {
+.stella {
 	background-color:#BBBB00;
 	color:#FFFF00;
-	font-size:3em;
+	font-size:2em;
+}
+red {
+color:red;
+}
+h1 {
+	font-size:10em
+}
+.small {
+	font-size:0.1em
+}
+* {
+font-family:monospace
 }
 </style>
 <b>untitled matter game</b>
+<h1 title="I DON'T KNOW WHY I'M SCREAMING BUT FOR SOME REASON NOT STATEMENTS DON'T WORK ON LOCALSTORAGE SOMEONE HELP"><b>DUE TO A MASSIVE BUG ALL THINGS WILL <red>NOT</red> BE SAVED OR LOADED</b></h1><p class="small">ALSO YOUR SAVES WILL BE PRESERVED</p>
 <p id="mdisp"></p>
 <span id="d1disp"></span>
 <p id="tdisp"></p>
+<p id="pdisp"></p>
 <button onclick="bd1(D(1))">Buy a first dimension(Cost:10)</button>
 <button onclick="fd1()">Feed your first dimensions</button>
 <br><button onclick="tbmd1()" id="bmd1">Unlock buy max first dimensions(Cost:100)</button>
 <button onclick="sbd1()" id="spl1" title="To specify, 33% of your matter is in buy max dimensions, and the other matter is fed to your dimensions.">Unlock  semi-buy max first dimensions(Cost:1e10)</button>
 <button id="asb" onclick="tasbm()">Unlock auto split buy(Cost:1e30)</button>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<button id="stellarize" onclick="stellarize()" title="throw all your matter into a star and hope it turns into helium" onclick="stellarize">Stellarize</button>
-<div id="starDiv">
+<button id="stellarize" class="stella" onclick="stellarize()" title="throw all your matter into a star and hope it turns into helium" onclick="stellarize">Stellarize</button>
+<div id="starDiv" class="stella">
 <p id="hedisp"></p>
+<button onclick="bhd(D(1))" class="stella">Buy helium Dimension(1e10 he)</button>
+<button onclick="bhd(player.he.div(1e11).floor())" class="stella">Buy """"""""""""""max"""""""""""""" helium Dimensions</button>
+<p id="heNotif">due to your massive amout of helium bending reality itself your dimensions no longer need matter</p>
+<p id="heDimDisp">You have x helium dimensions</p>
+<p id="hePowDisp">You have x helium power</p>
+<p id="repHeDisp">You have x replicated helium</p>
 </div>
